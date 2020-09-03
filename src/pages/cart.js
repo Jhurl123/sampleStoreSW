@@ -133,6 +133,13 @@ const Cart = () => {
     let displayItems = items.map(item => {
       
       const itemTotal = parseFloat(item.quantity, 10) * parseFloat(item.price, 10)
+      let formatTotal = itemTotal.toFixed(2)
+
+      // TODO Get around weird bug with the Number Textfield
+      // where I couldn't set default value
+      if( formatTotal === 'NaN'){
+         formatTotal = 0
+      }
 
       return ( 
         <tr key={item.id}>
@@ -151,10 +158,13 @@ const Cart = () => {
                 InputLabelProps={{
                   shrink: true,
                 }}
+                InputProps={{
+                  min: 0
+                }}
                 onChange={e => updateItemQuantity(e.target.value, item.id)}
               />
             </td>
-          <td style={{width: '25%'}}>{'$' + itemTotal.toFixed(2)}</td>
+          <td style={{width: '25%'}}>{'$' + formatTotal}</td>
           <td style={{width: '25%'}}>
             <IconButton onClick={() => removeItem(item.id)}>
               <DeleteIcon />
