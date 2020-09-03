@@ -1,0 +1,10 @@
+.nav-items_menu {
+  list-style-type: none;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.nav-items_menu a.active {
+  background: #178a63;
+  border-radius: 5px;
+}

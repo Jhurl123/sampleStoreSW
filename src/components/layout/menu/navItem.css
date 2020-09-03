@@ -1,0 +1,23 @@
+.nav-menu_link {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.nav-menu_link a {
+  color: #ffffff;
+  padding: .3rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  font-size: 1.15rem;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.mobile .nav-menu_link {
+  display: block;
+  padding: 1.3rem 0;
+}
+
+.mobile .nav-menu_link a {
+  font-size: 1.55rem;
+}
