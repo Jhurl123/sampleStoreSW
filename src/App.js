@@ -15,10 +15,10 @@ import SingleProduct from './pages/singleProduct'
 import AgeModal from './components/ageModal'
 import CookieFunctions from './helpers/cookieFunctions'
 import CartContext from './context/cartContext'
+import ErrorBoundary from './components/errorBoundary'
 
 const App = () => {
 
-  //{"cart":[{"id":"2","quantity":"2"},{"id":"1","quantity":"3"},{"id":"4","quantity":"2"}]}
   const [menuState, toggleMenuState] = useState(false)
   const [ageVerified, verifyAge] = useState(CookieFunctions.readCookie('ageVerified'))
   const [modalOpen, setModalStatus] = useState(true)
@@ -84,23 +84,27 @@ const App = () => {
 
   return (
     <Router>
-       <CartContext.Provider value={value}>
-        <div className="App">
-          {!ageVerified && (
-            <AgeModal verifyAge={verifyAge} open={modalOpen} setModalStatus={setModalStatus} />
-          )}
-          <Header siteTitle={"Sample Store"} siteLead={"A store for everyone"} handleMenu={toggleMenu} />
-          <MobileMenu in={menuState} siteTitle={"Sample Store"} />
-          <Switch>
-            <Route path="/products/category/:id" component={CategoryPage} />
-            <Route path="/product/:id" component={SingleProduct} />
-            <Route path="/cart" component={Cart} />
-            <Route path="/checkout" component={Checkout} />
-            <Route path="/" component={Home} />
-          </Switch>
-        </div>
-      </CartContext.Provider>
-  </Router>
+      <ErrorBoundary>
+        <CartContext.Provider value={value}>
+          <div className="App">
+            {!ageVerified && (
+              <AgeModal verifyAge={verifyAge} open={modalOpen} setModalStatus={setModalStatus} />
+            )}
+            <Header siteTitle={"Sample Store"} siteLead={"A store for everyone"} handleMenu={toggleMenu} />
+            <MobileMenu in={menuState} siteTitle={"Sample Store"} />
+            <ErrorBoundary>
+              <Switch>
+                <Route path="/products/category/:id" component={CategoryPage} />
+                <Route path="/product/:id" component={SingleProduct} />
+                <Route path="/cart" component={Cart} />
+                <Route path="/checkout" component={Checkout} />
+                <Route path="/" component={Home} />
+              </Switch>
+            </ErrorBoundary>
+          </div>
+        </CartContext.Provider>
+      </ErrorBoundary>
+    </Router>
   );
 }
 

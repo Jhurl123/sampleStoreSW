@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     background: 'rgb(8 128 88)',
     color: '#ffffff'
   },
+  errorAlert: {
+    background: 'rgb(243 197 191)'
+  },
   category: {
     textAlign: 'center',
     '& a': {
@@ -60,6 +63,7 @@ const SingleProduct = (props) => {
   const [product, setProduct] = useState({})
   const [quantity, setQuantity] = useState(1)
   const [userMessage, setUserMessage] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
   
   useEffect(() => {
     let unmounted = false;
@@ -72,23 +76,34 @@ const SingleProduct = (props) => {
 
   const getProduct = () => {
     
-    fetch('/product/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({id})
-    })
-    .then(res =>  {
-      if (!res.ok) {
-        throw new Error('Server Error');
-      }
-      
-      return res.json()
+    try {
+      setErrorMessage('')
+      fetch('/product/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({id})
+      })
+      .then(res =>  {
+        if (!res.ok) {
+          throw new Error('Server Error');
+        }
+        
+        return res.json()
 
-    }).then(data => {
-      setProduct(data.product)
-    })
+      }).then(data => {
+        setProduct(data.product)
+      })
+      .catch(err => {
+        setErrorMessage('Couldn\'t grab product data')
+      })
+    }
+    catch(err) {
+      console.log(err);
+      
+      setErrorMessage('Couldn\'t grab product data')
+    }
   }
 
   // Typically this would be done with a controlled input field w/ state value
@@ -136,6 +151,11 @@ const SingleProduct = (props) => {
   return(
     <Container style={{ padding: 0 }}>
       <Grid className={classes.page} container>
+        {errorMessage && (
+            <Alert className={classes.errorMessage} severity="error">
+              {errorMessage}
+            </Alert>
+          )}
         <Grid item md={6} sm={12}>
           <img src={product.image} alt={product.productName}/>
         </Grid>

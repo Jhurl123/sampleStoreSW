@@ -56,7 +56,6 @@ const useStyles = makeStyles((theme) => ({
 const ProductCard = (props) => {
 
   const classes = useStyles()
-
   const { id, productName, category, image, price } = props
 
   return (

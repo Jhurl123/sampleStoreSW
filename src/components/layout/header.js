@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import NavMenu from './menu/navMenu'
 import Hamburger from './menu/hamburger'
 import { Container, Grid, Hidden } from "@material-ui/core"
+import ErrorBoundary from "../errorBoundary";
 
 const Header = (props) => {
   
@@ -39,16 +40,18 @@ const Header = (props) => {
               {props.siteLead}
             </span>
           </Grid>
-          <Hidden only={['sm', 'xs']}>
-            <Grid item md={8}>
-              <NavMenu />
-            </Grid>
-          </Hidden>
-          <Hidden mdUp>
-            <Grid item xs={2} sm={2} style={{textAlign: "right"}}> 
-              <Hamburger toggleMenu={props.handleMenu} />
-            </Grid>
-          </Hidden>
+          <ErrorBoundary>
+            <Hidden only={['sm', 'xs']}>
+              <Grid item md={8}>
+                <NavMenu />
+              </Grid>
+            </Hidden>
+            <Hidden mdUp>
+              <Grid item xs={2} sm={2} style={{textAlign: "right"}}> 
+                <Hamburger toggleMenu={props.handleMenu} />
+              </Grid>
+            </Hidden>
+          </ErrorBoundary>
         </Grid>
       </Container>
     </header>

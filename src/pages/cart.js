@@ -8,6 +8,7 @@ import Alert from '@material-ui/lab/Alert'
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import CartContext from '../context/cartContext'
+import ErrorBoundary from "../components/errorBoundary"
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -72,6 +73,7 @@ const Cart = () => {
   const [fullCartItems, setFullCartItems] = useState(cart)
   const [displayItemRows, setDisplayItemRows] = useState([])
   const [userMessage, setUserMessage] = useState(false)
+  const [errorMessage, setErrorMessage] = useState(false)
 
   useEffect(() => {
     getCartItems()
@@ -108,30 +110,39 @@ const Cart = () => {
   // Get the full item info from API
   // Params: item - string
   const getItemInfo = async item => {
-    return await fetch('/product/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({id: item.id})
-    })
-    .then(res =>  {
-      if (!res.ok) {
-        throw new Error('Server Error');
-      }
-      return res.json()
-    }).then(data => {
-      return {...data.product, ...item}
-    })
+    try {
+      return await fetch('/product/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({id: item.id})
+      })
+      .then(res =>  {
+        if (!res.ok) {
+          throw new Error('Server Error');
+        }
+        return res.json()
+      }).then(data => {
+        setErrorMessage(false)
+        return {...data.product, ...item}
+      })
+    }
+    catch(err) {
+      setErrorMessage(true)
+      return 
+    }
   }
 
   // Format and populate all data and insert into 
   // JSX markup to allow for modifying the items w/in cart
   // Params: [] of cart items
   const formatCartJSX = items => {
-
+  
     let displayItems = items.map(item => {
-      
+
+      if(!item) return
+
       const itemTotal = parseFloat(item.quantity, 10) * parseFloat(item.price, 10)
       let formatTotal = itemTotal.toFixed(2)
 
@@ -191,7 +202,7 @@ const Cart = () => {
 
   // Update the individual items when value in textfield is changed
   // Params: newQuantity - number, itemId - string
-  // Return: none
+  // Return: none©
   const updateItemQuantity = (newQuantity, itemId) => {
 
     let cartItems = []
@@ -261,50 +272,55 @@ const Cart = () => {
 
   return(
     <Container maxWidth="md" style={{ padding: 0 }}>
-      <Grid justify="center" className={classes.page} container>
-        <h1 style={{color: 'rgb(26, 166, 119)', margin: '3rem 0 2rem 0'}}>Cart</h1>
-        <form onSubmit={(e)=> updateCart(e)}>
-          <table className={classes.cartTable}>
-            <thead>
-              <tr>
-                <th style={{width: '25%'}}>Item Name</th>
-                <th style={{width: '25%'}}>Quantity</th>
-                <th style={{width: '25%'}}>Price</th>
-                <th style={{width: '25%'}}>Remove?</th>
-              </tr>
-            </thead>
-            <tbody>
-              {displayItemRows && (
-                displayItemRows
-              )}
-            </tbody>
-            <tfoot>
-              <tr>
-                <td style={{border: 'none'}}></td>
-                <td className={classes.totalText} style={{padding: '1.5rem'}}>
-                  Total
-                </td>
-                <td className={classes.totalAmount} style={{padding: '1.5rem'}}>
-                  {'$' + parseFloat(cartPageTotal).toFixed(2)}
-                </td>
-              </tr>
-            </tfoot>
-          </table>
-          <Button className={classes.checkoutButton} size="large" variant="contained" type="submit">
-            Update Cart
-          </Button>
-          <Button className={classes.checkoutButton} size="large" variant="contained" type="button">
-            <Link to={'/checkout'} style={{color: '#ffffff'}}>
-              Checkout
-            </Link>
-          </Button>
-        </form>
-        {userMessage && (
-          <Alert className={classes.successAlert} severity="success">
-            Cart has been updated!
-          </Alert>
-        )}
-      </Grid>
+        <Grid justify="center" className={classes.page} container>
+          {errorMessage && (
+            <Alert severity="error">
+              Something went wrong! Please try again!
+            </Alert>
+          )}
+          <h1 style={{color: 'rgb(26, 166, 119)', margin: '3rem 0 2rem 0'}}>Cart</h1>
+          <form onSubmit={(e)=> updateCart(e)}>
+            <table className={classes.cartTable}>
+              <thead>
+                <tr>
+                  <th style={{width: '25%'}}>Item Name</th>
+                  <th style={{width: '25%'}}>Quantity</th>
+                  <th style={{width: '25%'}}>Price</th>
+                  <th style={{width: '25%'}}>Remove?</th>
+                </tr>
+              </thead>
+              <tbody>
+                {displayItemRows && (
+                  displayItemRows
+                )}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td style={{border: 'none'}}></td>
+                  <td className={classes.totalText} style={{padding: '1.5rem'}}>
+                    Total
+                  </td>
+                  <td className={classes.totalAmount} style={{padding: '1.5rem'}}>
+                    {'$' + parseFloat(cartPageTotal).toFixed(2)}
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+            <Button className={classes.checkoutButton} size="large" variant="contained" type="submit">
+              Update Cart
+            </Button>
+            <Button className={classes.checkoutButton} size="large" variant="contained" type="button">
+              <Link to={'/checkout'} style={{color: '#ffffff'}}>
+                Checkout
+              </Link>
+            </Button>
+          </form>
+          {userMessage && (
+            <Alert className={classes.successAlert} severity="success">
+              Cart has been updated!
+            </Alert>
+          )}
+        </Grid>
     </Container>
   )
 
