@@ -14,12 +14,12 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "assert": "^2.0.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
     "date-fns": "^2.16.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mocha": "^8.1.3",
     "path": "^0.12.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -31,6 +31,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "nodetest": "mocha 'src/server/test/**/*.js'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -48,5 +49,10 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://localhost:8080",
+  "devDependencies": {
+    "mocha": "^8.1.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0"
+  }
 }
