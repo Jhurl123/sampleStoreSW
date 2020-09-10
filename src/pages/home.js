@@ -20,6 +20,7 @@ const Home = () => {
   // Limited to 10 in node API
   const getProducts = async () => {
     try {
+      setErrorMessage('')
       const response = await fetch("/get_products", {
         method: "GET",
         headers: {
@@ -42,7 +43,7 @@ const Home = () => {
     <Container style={{ padding: 0 }}>
       <h1 style={{color: 'rgb(26, 166, 119)', margin: '3rem 0 2rem 0'}}>Featured Products</h1>
       {errorMessage && (
-        <Alert severity="error">
+        <Alert severity="error" className="errorMessage">
           {errorMessage}
         </Alert>
       )}

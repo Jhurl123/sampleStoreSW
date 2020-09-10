@@ -38,6 +38,10 @@ button[type="submit"] a {
   color: #61dafb;
 }
 
+.errorMessage {
+  background-color: rgb(243 197 191) !important;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -7,8 +7,7 @@ import TextField from '@material-ui/core/TextField'
 import Alert from '@material-ui/lab/Alert'
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
-import CartContext from '../context/cartContext'
-import ErrorBoundary from "../components/errorBoundary"
+import CartContext from '../context/cartContext'  
 
 const useStyles = makeStyles((theme) => ({
   page: {
@@ -84,6 +83,8 @@ const Cart = () => {
   // recalculate total
   useEffect(() => {
     if(fullCartItems) {
+      console.log(fullCartItems);
+      
       formatCartJSX(fullCartItems)
       calculateTotal()
     }
@@ -101,10 +102,12 @@ const Cart = () => {
     // Use for loop to use async/await to replace Promise.all
     for(let i = 0; i < cart.length; i++) {
       const item = cart[i]
+      const itemInfo = getItemInfo(item)
       fullItems.push(await getItemInfo(item))
     }    
-    
-    setFullCartItems(fullItems)
+
+    // Check here to ensure that array values aren't undefined
+    setFullCartItems(fullItems.filter(item => item))
   }
 
   // Get the full item info from API
@@ -202,7 +205,7 @@ const Cart = () => {
 
   // Update the individual items when value in textfield is changed
   // Params: newQuantity - number, itemId - string
-  // Return: none©
+  // Return: none
   const updateItemQuantity = (newQuantity, itemId) => {
 
     let cartItems = []
@@ -273,13 +276,13 @@ const Cart = () => {
   return(
     <Container maxWidth="md" style={{ padding: 0 }}>
         <Grid justify="center" className={classes.page} container>
-          {errorMessage && (
-            <Alert severity="error">
-              Something went wrong! Please try again!
-            </Alert>
-          )}
           <h1 style={{color: 'rgb(26, 166, 119)', margin: '3rem 0 2rem 0'}}>Cart</h1>
           <form onSubmit={(e)=> updateCart(e)}>
+            {errorMessage && (
+              <Alert severity="error" className="errorMessage" style={{marginBottom: '2rem'}}>
+                Something went wrong! Please try again!
+              </Alert>
+            )}
             <table className={classes.cartTable}>
               <thead>
                 <tr>
