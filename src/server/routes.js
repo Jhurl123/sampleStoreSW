@@ -13,7 +13,7 @@ router.get('/get_products', async (req, res) => {
    res.json(products)
   }
   catch (err) {
-    res.json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -28,7 +28,7 @@ router.post('/product', async (req, res) => {
   catch (err) {
     // Send error if API request is malformed or API doesn't
     // respond as expected
-    res.json(err);
+    res.status(500).json(err);
   }
 })
 
@@ -38,13 +38,14 @@ router.post('/get_categories', async (req, res) => {
     const products = await Products.getCategories(req, res)
 
     if(products instanceof Error) throw new Error(products)
+
     res.json(products)
 
   }
   catch (err) {
     // Send error if API request is malformed or API doesn't
     // respond as expected
-    res.json(err);
+    res.status(500).json(err);
   }
 })
 

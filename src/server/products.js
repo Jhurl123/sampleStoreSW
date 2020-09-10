@@ -39,6 +39,7 @@ exports.getAllProducts = async (req, res) => {
 exports.getSingleProduct = (req, res) => {
 
   const { id } = req.body 
+
   return new Promise((resolve, reject) => {
     request({
       method: 'GET',
@@ -79,6 +80,7 @@ exports.getCategories = (req, res) => {
     },
     function(error, response, body) {
       if (!error && response.statusCode === 200) {
+        reject(new Error("Couldn't get the products!!!"))
         resolve({'products': JSON.parse(body)})
       }
       else {
