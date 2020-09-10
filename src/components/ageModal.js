@@ -80,13 +80,13 @@ const AgeModal = (props) => {
     <Modal  
       open={open}
       onClose={setModalStatus}
-      aria-labelledby='simple-modal-title'
-      aria-describedby='simple-modal-description'
+      aria-labelledby='modal-title'
+      aria-describedby='modal-description'
       BackdropComponent={Backdrop}
     >
     <div className={classes.paper}>
-      <h2 className={classes.header}>You must be 21 to enter this site!</h2>
-      <p className={classes.datePrompt}>Please enter your date of birth</p>
+      <h2 id="modal-title" className={classes.header}>You must be 21 to enter this site!</h2>
+      <p id="modal-description" className={classes.datePrompt}>Please enter your date of birth</p>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
         <form onSubmit={(e) => submitForm(e)}>
           <Grid className={classes.formContainer} container >
