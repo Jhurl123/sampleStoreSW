@@ -390,7 +390,7 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                           class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
                           id="date-picker-inline"
                           type="text"
-                          value="09/09/2020"
+                          value="09/11/2020"
                         />
                         <div
                           class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
@@ -694,13 +694,13 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                           invalidDateMessage="Invalid Date Format"
                           label="Enter Your Age"
                           margin="normal"
-                          maxDate={1999-09-10T02:54:31.605Z}
+                          maxDate={1999-09-11T23:13:23.502Z}
                           maxDateMessage="You must be 21 years of age!"
                           minDate={1900-01-01T00:00:00.000Z}
                           minDateMessage="Date should not be before minimal date"
                           onChange={[Function]}
                           openTo="date"
-                          value={2020-09-10T02:54:31.605Z}
+                          value={2020-09-11T23:13:23.502Z}
                           variant="inline"
                           views={
                             Array [
@@ -713,7 +713,7 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                             DateInputProps={
                               Object {
                                 "format": "MM/dd/yyyy",
-                                "inputValue": "09/09/2020",
+                                "inputValue": "09/11/2020",
                                 "onChange": [Function],
                                 "openPicker": [Function],
                                 "validationError": "You must be 21 years of age!",
@@ -741,7 +741,7 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                               DateInputProps={
                                 Object {
                                   "format": "MM/dd/yyyy",
-                                  "inputValue": "09/09/2020",
+                                  "inputValue": "09/11/2020",
                                   "onChange": [Function],
                                   "openPicker": [Function],
                                   "validationError": "You must be 21 years of age!",
@@ -781,11 +781,11 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                                       class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
                                       id="date-picker-inline"
                                       type="text"
-                                      value="09/09/2020"
+                                      value="09/11/2020"
                                     />,
                                   }
                                 }
-                                inputValue="09/09/2020"
+                                inputValue="09/11/2020"
                                 keyboardIcon={<KeyboardIcon />}
                                 label="Enter Your Age"
                                 margin="normal"
@@ -798,7 +798,7 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                                   key="__/__/____"
                                   onChange={[Function]}
                                   refuse={/\\[\\^\\\\d\\]\\+/gi}
-                                  value="09/09/2020"
+                                  value="09/11/2020"
                                 >
                                   <WithStyles(ForwardRef(TextField))
                                     InputProps={
@@ -827,14 +827,14 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                                           class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
                                           id="date-picker-inline"
                                           type="text"
-                                          value="09/09/2020"
+                                          value="09/11/2020"
                                         />,
                                       }
                                     }
                                     label="Enter Your Age"
                                     margin="normal"
                                     onChange={[Function]}
-                                    value="09/09/2020"
+                                    value="09/11/2020"
                                   >
                                     <ForwardRef(TextField)
                                       InputProps={
@@ -868,14 +868,14 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                                             class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
                                             id="date-picker-inline"
                                             type="text"
-                                            value="09/09/2020"
+                                            value="09/11/2020"
                                           />,
                                         }
                                       }
                                       label="Enter Your Age"
                                       margin="normal"
                                       onChange={[Function]}
-                                      value="09/09/2020"
+                                      value="09/11/2020"
                                     >
                                       <WithStyles(ForwardRef(FormControl))
                                         className="MuiTextField-root makeStyles-picker-10"
@@ -1002,13 +1002,13 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                                                     class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
                                                     id="date-picker-inline"
                                                     type="text"
-                                                    value="09/09/2020"
+                                                    value="09/11/2020"
                                                   />,
                                                 }
                                               }
                                               multiline={false}
                                               onChange={[Function]}
-                                              value="09/09/2020"
+                                              value="09/11/2020"
                                             >
                                               <ForwardRef(Input)
                                                 aria-describedby="date-picker-inline-helper-text"
@@ -1053,13 +1053,13 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                                                       class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
                                                       id="date-picker-inline"
                                                       type="text"
-                                                      value="09/09/2020"
+                                                      value="09/11/2020"
                                                     />,
                                                   }
                                                 }
                                                 multiline={false}
                                                 onChange={[Function]}
-                                                value="09/09/2020"
+                                                value="09/11/2020"
                                               >
                                                 <WithStyles(ForwardRef(InputBase))
                                                   aria-describedby="date-picker-inline-helper-text"
@@ -1105,14 +1105,14 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                                                         class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
                                                         id="date-picker-inline"
                                                         type="text"
-                                                        value="09/09/2020"
+                                                        value="09/11/2020"
                                                       />,
                                                     }
                                                   }
                                                   multiline={false}
                                                   onChange={[Function]}
                                                   type="text"
-                                                  value="09/09/2020"
+                                                  value="09/11/2020"
                                                 >
                                                   <ForwardRef(InputBase)
                                                     aria-describedby="date-picker-inline-helper-text"
@@ -1162,14 +1162,14 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                                                           class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
                                                           id="date-picker-inline"
                                                           type="text"
-                                                          value="09/09/2020"
+                                                          value="09/11/2020"
                                                         />,
                                                       }
                                                     }
                                                     multiline={false}
                                                     onChange={[Function]}
                                                     type="text"
-                                                    value="09/09/2020"
+                                                    value="09/11/2020"
                                                   >
                                                     <div
                                                       className="MuiInputBase-root MuiInput-root MuiInput-underline Mui-error Mui-error MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
@@ -1188,7 +1188,7 @@ exports[`Age Modal Tests renders the ui as expected 1`] = `
                                                         onFocus={[Function]}
                                                         required={false}
                                                         type="text"
-                                                        value="09/09/2020"
+                                                        value="09/11/2020"
                                                       />
                                                       <WithStyles(ForwardRef(InputAdornment))
                                                         position="end"
