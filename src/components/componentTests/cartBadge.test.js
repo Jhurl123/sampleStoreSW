@@ -1,28 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import { mount, configure } from 'enzyme';
-import AgeModal from '../ageModal'
+import { configure, mount } from 'enzyme';
+import CartBadge from '../cartBadge'
 import toJson from "enzyme-to-json";
 import Adapter from 'enzyme-adapter-react-16';
  
 configure({ adapter: new Adapter() });
 
-let modalProps = {
-  open: true,
-  verifyAge: jest.fn(),
-  setModalStatus: jest.fn()
-}
-
-describe('Age Modal Tests', () => {
+describe('Cart Badge Tests', () => {
 
   it('renders the UI without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<AgeModal {...modalProps} />, div);
+    ReactDOM.render(<CartBadge />, div);
     ReactDOM.unmountComponentAtNode(div);
   })
   
   it('renders the ui as expected', () => {
-    const tree =  mount(<AgeModal {...modalProps} />)
+    const tree =  mount(<CartBadge />)
     expect(toJson(tree)).toMatchSnapshot();  
   })
 
