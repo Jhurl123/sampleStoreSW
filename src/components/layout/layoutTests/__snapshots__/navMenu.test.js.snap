@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavMenu Tests renders the ui as expected 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <NavMenu>
+      <ul
+        className="nav-items_menu"
+      >
+        <ErrorBoundary>
+          <NavItem
+            key="1"
+            link="/"
+            text="Home"
+          >
+            <li
+              className="nav-menu_link"
+            >
+              <Link
+                to="/"
+              >
+                <LinkAnchor
+                  href="/"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/"
+                    onClick={[Function]}
+                  >
+                    Home
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </li>
+          </NavItem>
+          <NavItem
+            key="2"
+            link="/checkout"
+            text="Checkout"
+          >
+            <li
+              className="nav-menu_link"
+            >
+              <Link
+                to="/checkout"
+              >
+                <LinkAnchor
+                  href="/checkout"
+                  navigate={[Function]}
+                >
+                  <a
+                    href="/checkout"
+                    onClick={[Function]}
+                  >
+                    Checkout
+                  </a>
+                </LinkAnchor>
+              </Link>
+            </li>
+          </NavItem>
+          <li
+            className="nav-menu_link"
+          >
+            <CartBadge>
+              <div>
+                <WithStyles(ForwardRef(Chip))
+                  avatar={
+                    <ForwardRef(WithStyles)>
+                      0
+                    </ForwardRef(WithStyles)>
+                  }
+                  clickable={true}
+                  color="primary"
+                  deleteIcon={<UNDEFINED />}
+                  href="#chip"
+                  label="$"
+                  onClick={[Function]}
+                  onDelete={[Function]}
+                >
+                  <ForwardRef(Chip)
+                    avatar={
+                      <ForwardRef(WithStyles)>
+                        0
+                      </ForwardRef(WithStyles)>
+                    }
+                    classes={
+                      Object {
+                        "avatar": "MuiChip-avatar",
+                        "avatarColorPrimary": "MuiChip-avatarColorPrimary",
+                        "avatarColorSecondary": "MuiChip-avatarColorSecondary",
+                        "avatarSmall": "MuiChip-avatarSmall",
+                        "clickable": "MuiChip-clickable",
+                        "clickableColorPrimary": "MuiChip-clickableColorPrimary",
+                        "clickableColorSecondary": "MuiChip-clickableColorSecondary",
+                        "colorPrimary": "MuiChip-colorPrimary",
+                        "colorSecondary": "MuiChip-colorSecondary",
+                        "deletable": "MuiChip-deletable",
+                        "deletableColorPrimary": "MuiChip-deletableColorPrimary",
+                        "deletableColorSecondary": "MuiChip-deletableColorSecondary",
+                        "deleteIcon": "MuiChip-deleteIcon",
+                        "deleteIconColorPrimary": "MuiChip-deleteIconColorPrimary",
+                        "deleteIconColorSecondary": "MuiChip-deleteIconColorSecondary",
+                        "deleteIconOutlinedColorPrimary": "MuiChip-deleteIconOutlinedColorPrimary",
+                        "deleteIconOutlinedColorSecondary": "MuiChip-deleteIconOutlinedColorSecondary",
+                        "deleteIconSmall": "MuiChip-deleteIconSmall",
+                        "disabled": "Mui-disabled",
+                        "icon": "MuiChip-icon",
+                        "iconColorPrimary": "MuiChip-iconColorPrimary",
+                        "iconColorSecondary": "MuiChip-iconColorSecondary",
+                        "iconSmall": "MuiChip-iconSmall",
+                        "label": "MuiChip-label",
+                        "labelSmall": "MuiChip-labelSmall",
+                        "outlined": "MuiChip-outlined",
+                        "outlinedPrimary": "MuiChip-outlinedPrimary",
+                        "outlinedSecondary": "MuiChip-outlinedSecondary",
+                        "root": "MuiChip-root",
+                        "sizeSmall": "MuiChip-sizeSmall",
+                      }
+                    }
+                    clickable={true}
+                    color="primary"
+                    deleteIcon={<UNDEFINED />}
+                    href="#chip"
+                    label="$"
+                    onClick={[Function]}
+                    onDelete={[Function]}
+                  >
+                    <WithStyles(ForwardRef(ButtonBase))
+                      className="MuiChip-root MuiChip-colorPrimary MuiChip-clickableColorPrimary MuiChip-deletableColorPrimary MuiChip-clickable MuiChip-deletable"
+                      component="div"
+                      href="#chip"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      role="button"
+                      tabIndex={0}
+                    >
+                      <ForwardRef(ButtonBase)
+                        className="MuiChip-root MuiChip-colorPrimary MuiChip-clickableColorPrimary MuiChip-deletableColorPrimary MuiChip-clickable MuiChip-deletable"
+                        classes={
+                          Object {
+                            "disabled": "Mui-disabled",
+                            "focusVisible": "Mui-focusVisible",
+                            "root": "MuiButtonBase-root",
+                          }
+                        }
+                        component="div"
+                        href="#chip"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        onKeyUp={[Function]}
+                        role="button"
+                        tabIndex={0}
+                      >
+                        <div
+                          className="MuiButtonBase-root MuiChip-root MuiChip-colorPrimary MuiChip-clickableColorPrimary MuiChip-deletableColorPrimary MuiChip-clickable MuiChip-deletable"
+                          href="#chip"
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onDragLeave={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          role="button"
+                          tabIndex={0}
+                        >
+                          <WithStyles(ForwardRef(Avatar))
+                            className="MuiChip-avatar MuiChip-avatarColorPrimary"
+                          >
+                            <ForwardRef(Avatar)
+                              className="MuiChip-avatar MuiChip-avatarColorPrimary"
+                              classes={
+                                Object {
+                                  "circle": "MuiAvatar-circle",
+                                  "colorDefault": "MuiAvatar-colorDefault",
+                                  "fallback": "MuiAvatar-fallback",
+                                  "img": "MuiAvatar-img",
+                                  "root": "MuiAvatar-root",
+                                  "rounded": "MuiAvatar-rounded",
+                                  "square": "MuiAvatar-square",
+                                }
+                              }
+                            >
+                              <div
+                                className="MuiAvatar-root MuiAvatar-circle MuiChip-avatar MuiChip-avatarColorPrimary MuiAvatar-colorDefault"
+                              >
+                                0
+                              </div>
+                            </ForwardRef(Avatar)>
+                          </WithStyles(ForwardRef(Avatar))>
+                          <span
+                            className="MuiChip-label"
+                          >
+                            $
+                          </span>
+                          <ForwardRef
+                            className="MuiChip-deleteIcon MuiChip-deleteIconColorPrimary"
+                            onClick={[Function]}
+                          >
+                            <WithStyles(ForwardRef(SvgIcon))
+                              className="MuiChip-deleteIcon MuiChip-deleteIconColorPrimary"
+                              onClick={[Function]}
+                            >
+                              <ForwardRef(SvgIcon)
+                                className="MuiChip-deleteIcon MuiChip-deleteIconColorPrimary"
+                                classes={
+                                  Object {
+                                    "colorAction": "MuiSvgIcon-colorAction",
+                                    "colorDisabled": "MuiSvgIcon-colorDisabled",
+                                    "colorError": "MuiSvgIcon-colorError",
+                                    "colorPrimary": "MuiSvgIcon-colorPrimary",
+                                    "colorSecondary": "MuiSvgIcon-colorSecondary",
+                                    "fontSizeInherit": "MuiSvgIcon-fontSizeInherit",
+                                    "fontSizeLarge": "MuiSvgIcon-fontSizeLarge",
+                                    "fontSizeSmall": "MuiSvgIcon-fontSizeSmall",
+                                    "root": "MuiSvgIcon-root",
+                                  }
+                                }
+                                onClick={[Function]}
+                              >
+                                <svg
+                                  aria-hidden={true}
+                                  className="MuiSvgIcon-root MuiChip-deleteIcon MuiChip-deleteIconColorPrimary"
+                                  focusable="false"
+                                  onClick={[Function]}
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+                                  />
+                                </svg>
+                              </ForwardRef(SvgIcon)>
+                            </WithStyles(ForwardRef(SvgIcon))>
+                          </ForwardRef>
+                          <WithStyles(memo)
+                            center={false}
+                          >
+                            <ForwardRef(TouchRipple)
+                              center={false}
+                              classes={
+                                Object {
+                                  "child": "MuiTouchRipple-child",
+                                  "childLeaving": "MuiTouchRipple-childLeaving",
+                                  "childPulsate": "MuiTouchRipple-childPulsate",
+                                  "ripple": "MuiTouchRipple-ripple",
+                                  "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                  "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                  "root": "MuiTouchRipple-root",
+                                }
+                              }
+                            >
+                              <span
+                                className="MuiTouchRipple-root"
+                              >
+                                <TransitionGroup
+                                  childFactory={[Function]}
+                                  component={null}
+                                  exit={true}
+                                />
+                              </span>
+                            </ForwardRef(TouchRipple)>
+                          </WithStyles(memo)>
+                        </div>
+                      </ForwardRef(ButtonBase)>
+                    </WithStyles(ForwardRef(ButtonBase))>
+                  </ForwardRef(Chip)>
+                </WithStyles(ForwardRef(Chip))>
+              </div>
+            </CartBadge>
+          </li>
+        </ErrorBoundary>
+      </ul>
+    </NavMenu>
+  </Router>
+</BrowserRouter>
+`;

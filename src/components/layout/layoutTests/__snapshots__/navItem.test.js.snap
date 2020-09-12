@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItem Tests renders the ui as expected 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <NavItem
+      link="www.google.com"
+      text="Google"
+    >
+      <li
+        className="nav-menu_link"
+      >
+        <Link
+          to="www.google.com"
+        >
+          <LinkAnchor
+            href="/www.google.com"
+            navigate={[Function]}
+          >
+            <a
+              href="/www.google.com"
+              onClick={[Function]}
+            >
+              Google
+            </a>
+          </LinkAnchor>
+        </Link>
+      </li>
+    </NavItem>
+  </Router>
+</BrowserRouter>
+`;

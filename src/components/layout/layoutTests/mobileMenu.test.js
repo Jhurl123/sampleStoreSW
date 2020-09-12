@@ -1,31 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom';
 import { mount, configure } from 'enzyme';
-import AgeModal from '../ageModal'
-import MockDate from 'mockdate'
+import MobileMenu from '../menu/mobileMenu'
 import toJson from "enzyme-to-json";
 import Adapter from 'enzyme-adapter-react-16';
  
 configure({ adapter: new Adapter() });
 
-let modalProps = {
-  open: true,
-  verifyAge: jest.fn(),
-  setModalStatus: jest.fn()
+
+let inProp = {
+  inProp: true
 }
 
-MockDate.set(1434319925275);
-
-describe('Age Modal Tests', () => {
+// TODO Simulate click of the hamburger icon to toggle open/close
+describe('Mobile Menu Tests', () => {
 
   it('renders the UI without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<AgeModal {...modalProps} />, div);
+    ReactDOM.render( 
+      <Router>
+        <MobileMenu {...inProp} />
+      </Router>, div);
     ReactDOM.unmountComponentAtNode(div);
   })
   
   it('renders the ui as expected', () => {
-    const tree =  mount(<AgeModal {...modalProps} />)
+    const tree =  mount(
+      <Router>
+        <MobileMenu {...inProp} />
+      </Router>)
     expect(toJson(tree)).toMatchSnapshot();  
   })
 

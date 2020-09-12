@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cart Badge Tests renders the ui as expected 1`] = `
+exports[`Product Card Tests renders the ui as expected 1`] = `
 <BrowserRouter>
   <Router
     history={

@@ -25,7 +25,7 @@ let cardProps = {
   price: '45.00'
 }
 
-describe('Cart Badge Tests', () => {
+describe('Product Card Tests', () => {
 
   it('renders the UI without crashing', () => {
     const div = document.createElement('div');
