@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { mount, configure } from 'enzyme';
 import SingleProduct from '../SingleProduct'
 import toJson from "enzyme-to-json";
-import Adapter from 'enzyme-adapter-react-16';
+import Adapter from 'enzyme-adapter-react-16';  
  
 configure({ adapter: new Adapter() });
 

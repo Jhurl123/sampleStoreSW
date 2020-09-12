@@ -3,11 +3,8 @@ import PropTypes from 'prop-types';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import { makeStyles } from "@material-ui/core/styles"
-import Grid from '@material-ui/core/Grid';
-import DateFnsUtils from '@date-io/date-fns';
 import { sub, compareAsc } from 'date-fns'
-import Button from '@material-ui/core/Button';
-import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
+import AgeGateForm from './ageGateForm'
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -26,18 +23,6 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     fontSize: '2rem',
-  },
-  datePrompt: {
-    marginBottom: '2em',
-    fontSize: '1.3rem'
-  },
-  formContainer: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  picker: {
-    marginBottom: '2rem'
   }
 
 }))
@@ -57,6 +42,8 @@ const AgeModal = (props) => {
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
+
+  // Create a function to pass to the form
 
   const submitForm = (e) => {
 
@@ -87,30 +74,12 @@ const AgeModal = (props) => {
     <div className={classes.paper}>
       <h2 id="modal-title" className={classes.header}>You must be 21 to enter this site!</h2>
       <p id="modal-description" className={classes.datePrompt}>Please enter your date of birth</p>
-      <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <form onSubmit={(e) => submitForm(e)}>
-          <Grid className={classes.formContainer} container >
-            <KeyboardDatePicker
-              className={classes.picker}
-              disableToolbar
-              disableFuture
-              variant="inline"
-              format="MM/dd/yyyy"
-              margin="normal"
-              id="date-picker-inline"
-              label="Enter Your Age"
-              maxDate={verifyDate}
-              maxDateMessage="You must be 21 years of age!"
-              value={selectedDate}
-              onChange={handleDateChange}
-              KeyboardButtonProps={{
-                'aria-label': 'change date',
-              }}
-            />
-              <Button size="large" variant="contained" type="submit">Enter Now</Button>
-          </Grid>
-        </form>
-      </MuiPickersUtilsProvider>
+      <AgeGateForm 
+        submitForm={submitForm} 
+        verifyDate={verifyDate} 
+        handleDateChange={handleDateChange}
+        selectedDate={selectedDate}
+      />
     </div>
   </Modal>
   )
