@@ -83,8 +83,6 @@ const Cart = () => {
   // recalculate total
   useEffect(() => {
     if(fullCartItems) {
-      console.log(fullCartItems);
-      
       formatCartJSX(fullCartItems)
       calculateTotal()
     }
