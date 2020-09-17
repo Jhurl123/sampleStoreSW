@@ -56,9 +56,9 @@ const AgeGateForm = props =>  {
 
 AgeGateForm.propTypes = {
   submitForm: PropTypes.func, 
-  verifyDate: PropTypes.string, 
+  verifyDate: PropTypes.instanceOf(Date), 
   handleDateChange: PropTypes.func, 
-  selectedDate: PropTypes.string 
+  selectedDate: PropTypes.instanceOf(Date) 
 }
 
 export default AgeGateForm
